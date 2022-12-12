@@ -2,7 +2,7 @@
 
 
 
-## Interfaz de usuario por voz
+## Interfaz de usuario por Voz
 
 Este código crea una interfaz de usuario por voz para interactuar con diferentes funcionalidades. Algunas de las funcionalidades incluidas son:
 - Reproducir una canción en YouTube dado un título
