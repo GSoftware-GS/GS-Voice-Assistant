@@ -21,16 +21,16 @@ def iniciar():
     print("Iniciando Jarvis")
     # Crea un nuevo hilo de ejecución que ejecuta el código de alexa
     # Pasando la variable encendido como argumento
-    hilo = Thread(target=run, args=(encendido,))
+    hilo = Thread(target=run)
     hilo.start()
 
 # Crea una función que se llame al hacer clic en el botón Salir
 def salir():
     global root
     global hilo
+    global encendido
     # Detiene el hilo de ejecución
     alexa.encendido = False
-    print("Jarvis detenido")
     # Cierra la ventana raíz
     root.destroy()
 

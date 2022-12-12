@@ -9,8 +9,8 @@ import webbrowser
 import os
 from pyChatGPT import ChatGPT
 
+global encendido 
 encendido = True
-
 nombre = 'alexa'
 
 
@@ -37,7 +37,11 @@ def talk(text):
     engine.runAndWait()
 
 
-def listen(encendido):
+def listen():
+    global encendido
+    if not encendido:
+        print("Apagado")
+        exit()
     try:
         with sr.Microphone() as source:
             print("Escuchando...")
@@ -62,16 +66,13 @@ def listen(encendido):
     except Exception as e:
         print("Excepcion: ")
         print(e)
-        if encendido:
-            print("sigue encendido: "+str(encendido))
-            listen(encendido)
-        else:
-            exit()
+        listen()
 
 
-def run(encendido):
+def run():
     
-    encendido = encendido
+    global encendido
+    
     if not encendido:
             exit()
             
@@ -79,7 +80,7 @@ def run(encendido):
     
         
 
-        rec = listen(encendido)
+        rec = listen()
         #rec = input("Input: ")
         if 'reproduce' in rec:
             print("Inicializando reproducción")
@@ -141,3 +142,6 @@ def run(encendido):
         else:
             print("No se ha entendido la orden")
             talk("No se ha entendido la orden")
+            
+    print("Alexa se ha apagado")
+    exit()
