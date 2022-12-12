@@ -9,9 +9,13 @@ import webbrowser
 import os
 from pyChatGPT import ChatGPT
 
-session_token = 'eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..JYNF4K15M5nsNt1a.dbPxqMEVJEOrJCd261Iqhwe2WWV7oX36M4UT2vRkyKKvWUIN-q9fBa7xV9bKDLxHK-jtsWSiQ0JnmF61slZy1ryEJH-y_pjusowXlqjLPqhzegkESeqvWS8Yv0k-Ib2GfexIm2F8BPz7tjoVdSFB2dh7Ndg3S_6FwzzeRt0-mm0Bwkp2Q_dhZoZ0Q-kZdIFvmZvfrqEoih7wh8frSCtyaMw-LhIE8Yq5WYX0tH4r0u3bH9nhFj_gTboE-94cjiJOE0EHocVrvp7g_SYTqfJc2H1YFkcHcQHUJ0j0K5jYmqux5Kr2rzXM8XaFFBuLDK03wYAVXhCj0PUAZwDVlDIYDxDFIZm4EHsL0g6g3_nF1Z-zgk-4NIhwNnjvTNacd5SPoLbUFuk-Nl8XoTJrmFkr7w2VKZhek1se8B4ns1QEMc2rCJNVhP5Mmv_dGhYZzodjPqh0q59-odkFD-HwR7LxZ3pgdOEvpEagLz_HtDT53j1qEwUuLJrQpi4LgOrJKR-Br_cJmYLMd3DPvXW2vJlXuV99F4_dw26iol1xjGwMQbM96D5o7oqlbK0iiRFf9AzyCw-P6NWtw4UCKIF7ZEvUwSYUmBjvXvGUCG_l2TcJRoqclvlW6Lp2B41Ddmntb2lKZYes0qEhgZpm1q6NOVRpW3txnUdXtf1i0mSOXF_7jEKPCC0C9hIqy3CQ2z_Osp-Bu8BoWYb3vvHSelo2J0awLEwm0ermPntG8ooh-H-ghtTNeDEnCnqZ1awTUP3WJxNeZlyc7Dh2gD3Yeqb8GGufwcH5XwQQ3wt4IDxxpDDi_nxiBlY7ana7c6UkvGSPUN1yaJXScNcDRNCtpqwXgI0S4fYPdpstmHAR50uMWNEuzYeu8d-T6VmaS6KfCi-F1Zz81Ay2HSXheolI6aw-5fPrTOoE4upIzoZIxeRtBohlMdm5yizbhtepZzihgBRRnBlGAiwACYClN51dZBTMgItwsGHoeyxH6m-N6OHYuSW5j1dSCktq7opOxY-5rWMaJ1cvzJvV_DVPdEHywP-QF9ekVZb2udOlBaDIfJKL8DN1nxRJd0qvppx6pMbzjo2_0lkTZiAMgDY5sHTpbL0KgmRMNAL1oSmMDCgxO6AcTrLBX0B2Gq9Xy88lKXWJ-4OVzqcQPIWPPCcrh8J8Viq9qMBmy_MQjrOOQNC0syR3iXVD7Qb39KYX63NaLTDnMGl8Ef-En4MqoN-1r87bzBZFg6QfZOjTyfwvTUoCh07-Y7VXBH9nAxGAaIl84739PQ1ybDkH-ZNEKQjBNDI44xKBGUguVZGnpUtIOrQUBxdFImuzRmVt8Gc0RJ_cDr1E1-sOrkTuQkNt2hWKG0VHmXBR4vfdElDkf4Sz3EhWk29kNMktWq41Gi7Ulu4KwlpcnerWPrn3Ec5HWyUx0ERs06pQs9Jt8Ta-tVZAbkwyWpiwa4dFuVWfwIP_6xFR-3XvSH2qK3ymUuGw1-WWrRilpacbJG2D8xz04PhNVp_P8Di1W4shzKIKP1EqtCfeMw00mofHoKwttb4eAZ6iV4RTx76PGVtLCpA2qKPc5NofnCC39zjhKWaV4Lx61SmSaEvpqgxf04KOz6x2KvIXFT9z4AUBM29Vyy1NVvWaEHVray9d71BxLHJ1esXD2WHo_U13QzDE-LWJA6OzxuctClhEwEsoBCvVUMZY8xFfWjLyQOUDsV4VusxH7rMd3jDrnuBFwnFRfAfBhRH5JvMRJBGZRQwfAEFHayVgFQb1-53Rpc0z4yYZZY7dlSjXl4_56Yytb_cRsBWqhrveqozSY3ynFo3bT2tTNAzWNfb4HON3f8KlzxiFwyeozkkYv6o0Z2M9AuOUWQC0xVGANwbbtNAqVQZZoBmx019uKy3nQ7szR7r5RIIvR9m4sikvKJXVWTD9rYuzhSrOCFdrOD81Rw_SYabMin5IAoIJ2bLDFQm40FcBfB3Tf0slc0nHIal7z-CCjxkx77DzgCZdgM7YiI9s6-WZIzbguEZBjtD9GEIu2C0lU-YNmTkwl99OqdM2_YfYH_ufuOTT1LwjvnLj42NjUY7fFdEIfQDYwteZlphf9G_DKuu_LU-WcdB_UgZ-rel-5hOH19jYoDWFpFJq5HvxkOHecIDFTK5X0EgaVm7bP5o6lJbjGhW1ar1qqtUxNfJsIyfwDk2QVFc5d4xK4Al9jc4RZVBZVattaYOp1kV-O8DLemhQweBxcPbLS7l8skWXBtTBAFKJDc4aU4GNpqtm1C4xq-blrIy3sQo-fK0h-O4QvA9A5m79RBzsQUpzpV8.wC-bXwYaHwRg7DFtoq5Oqg'  # `__Secure-next-auth.session-token` cookie from https://chat.openai.com/chat
-api = ChatGPT(session_token)  # auth with session token
-
+session_token = 'eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..9GLG8p2l9VcvZ8lL.eUSm8DnWX-i08ithfJnCi91oh0Mtby2N26z5s9XuBOCAAiDvQ1bdPq2qg1QMzDLcQ3XEcyeEHr5s2o-XY8jlGVYUtoiF61MkcSWi0NzW-0ZH3RWw0e5AB2RGmZdaxTJPx2ZQMMQ4YbetfPSpQSvv1miMBw9_JPhqWO477mZRCndUbhFYjmdBSDZPJqcfWOvdmtF9Ap2ijZf6exPcnfAJvNqvYxEqlxNjUfDxteswXi9vST3WY5XlKufky_88nYPS6HRvVvhAcyO1i74KiPIM_6ZKTKmBtEoKDgOs98DTiTKWb-5mZVA3YmY45Ran1XD6xMyeTGu6K7SWM_bCj_3uZI9or4YhJ4lZqJXmxz0vAkuN2AeLImkgBsrwzshCdJTFcIi_I7aKSIyHcMdxp5FLXFDu-yWVNKxMg1Gz8QDol-ed8ghdI_kNviAHr8INWGqtpLeIVgVCjZODOn8GM7T1TOR2lkK9y8_x5a1qzQSgrZKbOJswEEBTG9Nx3WGFwlBwtCU6pDFcHnjJdwA7qy9VqqTdA9jYU5BTN1mbEMkBowkyPu6xTP6RU_iiJQfrmbT6AJfsmhg_M_ccgMCxoWLsygFpA-Ld7va0cMbv-l0yRB1NOKsaddtEunk4iJWOYafznAjtpO-EcRBsc5XWgFLnPSGFS8xjOPZ5XaVbz56ksA5ydVTQ2ubzHIjO_aCuMOilLb34l5wXuq27HjlqF5_WEhWeAC87RVUDdkJocRdmp9mEcjZaxJS14WJk_LVgtQoeGwxA1knOiHYVQxQcDDMExiDU1Frf8tA5q-aGnx-q0N6G6nF6EtqR9w4sNWS2x1_Km-Ebqjm_jneJua9lhZkfB7HdyBVSRSTEgHesSH0xTeh3GyPd0EacA2zE5Obqgxr3bE1HN8oEdI35M_GRXVsYV4a7scIbzZBUCHGPBkKFc_3waNyAxn4mFI3ZJqXoMyDQk4vXyfO1IGGF_umYOz9QPbef3fSieGtkpAfSbMrZQi43z_9-rF2pWuc4h01dYT1OW8izxmV1a1gotzGpAAUoyBXsdpITTgtspswCzXRIskDFqKl7W6QtqjMVPRoHAzYB5ZsxAKaOPPBZOz8cHXdTj9p_6wAbedPikpvDNauwbY5tpdSxFDlL9-D7xGe5yc_xdnu8d5G1vQA2_b-FKftBcLVxlZtBSQdA1ogj22y3TMP22O1uinWmuZffdZzpLjd8_AfrjtEKFP-G_VmhnB-8n6fcf8IV5nErRWc16JWcBX75eDBtoqO9hGO4-gWFiMvm1KxrgYlpECaxcXvX3iwHEOIEQ0VaBOs5MSaXbOrnpR-L-bvhRiYHHbfwRjTxp6yHgTQjRdHLKy6pEYOekJ0dZpqCLzZf1KPOD6Wve6rpVL5H6AFHEZfuSVnfb6G5vfQP2DRv9yjY2HbEqQKZ-at-6ILcJth8MzM_NDDI087qvQZ0gpanEcMNCORPhpjvPo35gtsoJuIkDz8LdarYuzLd-fPAgbRCdL4V4lIS3vrnXBM6-t1u7x96DiTcz1IpO1X88hlwYZfY5fmR29gA2iO4w_kSy9crsL0mZjF6diDR5hQPakRAPQZXna8e0u503nnn7OUN_NSZqyPULtL5o3SL_vucsEOfpJ_QHbXrLE92SpZav2ZOghVF_8fTLjtzYiYUMEi9uxUywOuQuOYLt0yyPzFshBIolgrwT6CeJ2cb_1G_3qvwQzrCz0k-Yy41cFMQL-C2ZwA9_UUXhQmAmJFcqHJal2ypL5ixYgAOfPcliGtesMaktSCK0iiG2TDdFskaK_T9ieOQY9H1Evf-IH7fPAoc3H10zVkB2N7shtOZakTw9PYSvgNS9j4GH80XZa2nRx25lxbxbYjjR1_4hRtDECT5DveQf2PdUezv6AtXmmbB34H2Z4BoIXynOtoZ-KLT5diqh3DYnStqAqUZIWfDxTh4A92XNUWugBewH7okNnScFNjQk91-2vN-CzEg1i9Lx4VmnF20EkiE71Cxv4iC11fm2nMVOURUK16TIhFSLqzi7_7QSf_-3hRLJzR95_xOdGYkdPsF9zWGbuqdN-NtVDRSNnylOw-qaKRMTokM8kbZF8xMcdpPPI9MEymoiZqYjlY4jKg5QsZfylnuPK3ttwsElX8LnKT54-UMLu0CtvkghrJnd7B5O5QTa_0leTN6NE1eV04p-FCAWznY4XV1w0gShesXGLpbrpS_z-lD7mhQb8JayJPvcdonUsuN_NigIQLa-rLdSbsrRxdpXcQD3RpWGbJ1MpwJGGAgUj-hd9YK16oUElSSa9I.zzsUfwlrlxqYLHxKMDNVIg'
+#try:
+#    api = ChatGPT(session_token)  # auth with session token
+#except Exception as e:
+#    print("Error al iniciar sesión")
+#    print(e)
+#    exit()
 
 nombre = 'alexa'
 
@@ -54,12 +58,15 @@ def listen():
                 return rec
                 
             else:
-                #listen()
-                pass
+                listen()
+                
 
-    except:
-        print("Excepcion")
-        listen()
+    except Exception as e:
+        print("Error al escuchar")
+        print(e)
+        return False
+        
+        
 
 
 def run(encendido):
@@ -73,6 +80,7 @@ def run(encendido):
 
         rec = listen()
         #rec = input("Input: ")
+        print("rec:"+rec)
         if 'reproduce' in rec:
             print("Inicializando reproducción")
             music = rec.replace('reproduce', '')
@@ -131,6 +139,7 @@ def run(encendido):
         
 
         else:
-            resp = ask(rec)
-            print(resp)
-            talk(resp["message"])
+            #resp = ask(rec)
+            #print(resp)
+            #talk(resp["message"])
+            pass

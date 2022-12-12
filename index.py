@@ -13,7 +13,7 @@ root.geometry("300x200")
 # Utilizando diferentes diseños para diferentes tamaños de pantalla
 
 # Crea una variable que almacene el hilo de ejecución
-hilo = None
+
 
 # Crea una función que se llame al hacer clic en el botón Iniciar
 def iniciar():
@@ -21,18 +21,17 @@ def iniciar():
     print("Iniciando Jarvis")
     # Crea un nuevo hilo de ejecución que ejecuta el código de alexa
     # Pasando la variable encendido como argumento
-    hilo = Thread(target=run, args=(encendido,))
-    hilo.start()
+    run(encendido)
 
 # Crea una función que se llame al hacer clic en el botón Salir
+
+
 def salir():
-    global root
-    global hilo
-    # Detiene el hilo de ejecución
-    hilo.stop()
-    print("Jarvis detenido")
+    encendido=False
+    run(encendido)
     # Cierra la ventana raíz
     root.destroy()
+
 
 # Crea un gradiente de fondo utilizando dos colores
 gradient = tk.Canvas(root, width=300, height=200)
@@ -47,11 +46,13 @@ container = tk.Frame(gradient, bg="white")
 container.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
 
 # Crea un botón Iniciar y lo añade al contenedor
-iniciar_btn = tk.Button(container, text="Iniciar", command=iniciar, bg="#0074D9", fg="white", font=("Arial", 12))
+iniciar_btn = tk.Button(container, text="Iniciar", command=iniciar,
+                        bg="#0074D9", fg="white", font=("Arial", 12))
 iniciar_btn.pack()
 
 # Crea un botón Salir y lo añade al contenedor
-salir_btn = tk.Button(container, text="Salir", command=salir, bg="#FF4136", fg="white", font=("Arial", 12))
+salir_btn = tk.Button(container, text="Salir", command=salir,
+                      bg="#FF4136", fg="white", font=("Arial", 12))
 salir_btn.pack()
 
 # Muestra la ventana raíz y espera a que se cierre
