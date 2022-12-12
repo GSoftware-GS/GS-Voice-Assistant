@@ -1,9 +1,9 @@
 import tkinter as tk
 from threading import Thread
 from alexa import run
+import alexa
 
 encendido = True
-
 # Crea una ventana raíz de tkinter
 root = tk.Tk()
 root.title("Jarvis Control")
@@ -29,7 +29,7 @@ def salir():
     global root
     global hilo
     # Detiene el hilo de ejecución
-    hilo.stop()
+    alexa.encendido = False
     print("Jarvis detenido")
     # Cierra la ventana raíz
     root.destroy()
