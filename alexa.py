@@ -53,8 +53,8 @@ def listen():
                 rec = rec.replace(nombre, '')
                 talk(rec)
                 print(rec)
-                if type(rec) == str:  
-                    return rec
+                if isinstance(rec, str):
+                    return(rec)
                 else:
                     print("no es str")
                     return("no es str")
@@ -82,7 +82,7 @@ def run():
 
         rec = listen()
         #rec = input("Input: ")
-        print("rec:"+rec)
+        print(f'Has dicho: {rec}')
         if 'reproduce' in rec:
             print("Inicializando reproducción")
             music = rec.replace('reproduce', '')
