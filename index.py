@@ -16,6 +16,12 @@ class App(customtkinter.CTk):
         
         self.title("Asistente virtual")
         
+        self.title_text = customtkinter.CTkLabel(master=self,
+                                              text="GSoftware - GSChat")  # font name and size in px
+        self.title_text.pack()
+        
+        self.name_output_text = customtkinter.CTkLabel(master=self, text=alexa.nombre)  # font name and size in px
+        self.name_output_text.pack()
         
         self.start_button = customtkinter.CTkButton(self, text="Iniciar", command=self.on_start)
         self.start_button.pack()
@@ -23,6 +29,10 @@ class App(customtkinter.CTk):
         self.exit_button = customtkinter.CTkButton(self, text="Salir", command=self.on_exit)
         self.exit_button.pack()
 
+        self.name_text = customtkinter.CTkLabel(master=self,
+                                              text="Nombre de tu Asistente")  # font name and size in px
+        self.name_text.pack()
+        
         self.text_input = customtkinter.CTkEntry(self)
         self.text_input.pack()
 
@@ -58,13 +68,21 @@ class App(customtkinter.CTk):
         global encendido
         # Detiene el hilo de ejecución
         alexa.encendido = False
+        print("Apagando...")
+        print(alexa.encendido)
+        hilo.join()
         # Cierra la ventana raíz
         self.destroy()
 
     def on_send(self):
+        global nombre
         text = self.text_input.get()
-        print(f"Enviando texto: {text}")
+        print(f"Nombre cambiado a {text}")
+        self.name_output_text.configure(text=text)
+        alexa.nombre = text
+        
 
 
 app = App()
 app.mainloop()
+
