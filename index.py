@@ -1,9 +1,9 @@
 import tkinter as tk
 from threading import Thread
 from alexa import run
+import alexa
 
 encendido = True
-
 # Crea una ventana raíz de tkinter
 root = tk.Tk()
 root.title("Jarvis Control")
@@ -21,14 +21,18 @@ def iniciar():
     print("Iniciando Jarvis")
     # Crea un nuevo hilo de ejecución que ejecuta el código de alexa
     # Pasando la variable encendido como argumento
-    run(encendido)
+    hilo = Thread(target=run)
+    hilo.start()
 
 # Crea una función que se llame al hacer clic en el botón Salir
 
 
 def salir():
-    encendido=False
-    run(encendido)
+    global root
+    global hilo
+    global encendido
+    # Detiene el hilo de ejecución
+    alexa.encendido = False
     # Cierra la ventana raíz
     root.destroy()
 
@@ -52,7 +56,7 @@ iniciar_btn.pack()
 
 # Crea un botón Salir y lo añade al contenedor
 salir_btn = tk.Button(container, text="Salir", command=salir,
-                      bg="#FF4136", fg="white", font=("Arial", 12))
+                        bg="#FF4136", fg="white", font=("Arial", 12))
 salir_btn.pack()
 
 # Muestra la ventana raíz y espera a que se cierre
