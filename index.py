@@ -70,6 +70,7 @@ class App(customtkinter.CTk):
         alexa.encendido = False
         print("Apagando...")
         print(alexa.encendido)
+        
         hilo.join()
         # Cierra la ventana raíz
         self.destroy()
