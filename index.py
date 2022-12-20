@@ -4,9 +4,12 @@ from alexa import run,stop
 import alexa
 import customtkinter
 import time
+import sys
 
 customtkinter.set_appearance_mode("Dark")  # Modes: "System" (standard), "Dark", "Light"
 customtkinter.set_default_color_theme("green")  # Themes: "blue" (standard), "green", "dark-blue"
+
+hilo = Thread(target=run)
 
 class App(customtkinter.CTk):
     def __init__(self):
@@ -58,7 +61,7 @@ class App(customtkinter.CTk):
         print("Iniciando Jarvis")
         # Crea un nuevo hilo de ejecución que ejecuta el código de alexa
         # Pasando la variable encendido como argumento
-        hilo = Thread(target=run)
+        
         hilo.start()
 
     def on_exit(self):
@@ -67,15 +70,19 @@ class App(customtkinter.CTk):
         global encendido
         # Detiene el hilo de ejecución
         alexa.stop()
-        print("Apagando...")
-        while hilo.is_alive():
-            print(alexa.parar_evento.is_set())
-            time.sleep(1)
+        if hilo is not None:
+            print("Apagando...")
+            while hilo.is_alive():
+                print(alexa.parar_evento.is_set())
+                time.sleep(1)
             
-        
-        hilo.join()
+            
+        print ("Hilo detenido")
         # Cierra la ventana raíz
         self.destroy()
+        print("Cerrando...")
+        sys.exit()
+        print("Noexit")
 
     def on_send(self):
         global nombre
@@ -88,4 +95,6 @@ class App(customtkinter.CTk):
 
 app = App()
 app.mainloop()
+
+
 

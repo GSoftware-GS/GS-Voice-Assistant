@@ -11,10 +11,12 @@ from pyChatGPT import ChatGPT
 from threading import Thread, Event
 import threading
 from talk import talk, talk
+import sys
 
 global encendido 
 encendido = True
 nombre = 'alexa'
+global hilo
 
 parar_evento = threading.Event()
 
@@ -135,7 +137,9 @@ def run():
             else:
                 print("No entiendo lo que dices")
                 talk("No entiendo lo que dices")
-                
+    print("Adios alexa")
+    sys.exit()
+    
 def stop():
     # Establece la bandera de parar_evento a True para detener el hilo
     parar_evento.set()
