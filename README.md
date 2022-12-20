@@ -27,4 +27,4 @@ Además, utiliza la biblioteca ChatGPT para responder a preguntas generales.
 
 ## Ejecución
 Para ejecutar el código, asegúrate de tener las dependencias instaladas y escribe en tu terminal:
-```python index.py
+```python index.py```
