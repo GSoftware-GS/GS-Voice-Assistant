@@ -19,7 +19,7 @@ class App(customtkinter.CTk):
         self.title("Asistente virtual")
         
         self.title_text = customtkinter.CTkLabel(master=self,
-                                              text="GSoftware - GSChat")  # font name and size in px
+                                              text="GSoftware - GSChat V.2")  # font name and size in px
         self.title_text.pack()
         
         self.name_output_text = customtkinter.CTkLabel(master=self, text=alexa.nombre)  # font name and size in px
