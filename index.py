@@ -1,13 +1,12 @@
 import tkinter as tk
 from threading import Thread
-from alexa import run
+from alexa import run,stop
 import alexa
 import customtkinter
+import time
 
 customtkinter.set_appearance_mode("Dark")  # Modes: "System" (standard), "Dark", "Light"
 customtkinter.set_default_color_theme("green")  # Themes: "blue" (standard), "green", "dark-blue"
-
-encendido = True
 
 class App(customtkinter.CTk):
     def __init__(self):
@@ -25,7 +24,7 @@ class App(customtkinter.CTk):
         
         self.start_button = customtkinter.CTkButton(self, text="Iniciar", command=self.on_start)
         self.start_button.pack()
-
+        
         self.exit_button = customtkinter.CTkButton(self, text="Salir", command=self.on_exit)
         self.exit_button.pack()
 
@@ -67,9 +66,12 @@ class App(customtkinter.CTk):
         global hilo
         global encendido
         # Detiene el hilo de ejecución
-        alexa.encendido = False
+        alexa.stop()
         print("Apagando...")
-        print(alexa.encendido)
+        while hilo.is_alive():
+            print(alexa.parar_evento.is_set())
+            time.sleep(1)
+            
         
         hilo.join()
         # Cierra la ventana raíz
